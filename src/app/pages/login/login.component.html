@@ -1,0 +1,66 @@
+<div class="container" [ngClass]="{ 'active': isRegisterMode }">
+    <div class="form-container sign-up">
+      <form [formGroup]="registerForm" (ngSubmit)="register()">
+        <h1>Registrarse</h1>
+        <!-- <div class="social-icons">
+          <a href="#" class="icon"><i class="pi pi-google"></i></a>
+          <a href="#" class="icon"><i class="pi pi-facebook"></i></a>
+          <a href="#" class="icon"><i class="pi pi-github"></i></a>
+          <a href="#" class="icon"><i class="pi pi-linkedin"></i></a>
+        </div> -->
+        <span>O usa tu email para registrarte</span>
+        <p-floatlabel variant="in">
+            <input pInputText formControlName="name" autocomplete="off" />
+            <label for="on_label">Nombre</label>
+        </p-floatlabel>
+        <p-floatlabel variant="in">
+            <input type="email" pInputText formControlName="email"  autocomplete="off" />
+            <label for="on_label">Correo</label>
+        </p-floatlabel>
+        <p-floatlabel variant="in">
+            <input type="password" pInputText formControlName="password"  autocomplete="off" />
+            <label for="on_label">Contraseña</label>
+        </p-floatlabel>
+        <button pButton label="Registrarse" type="submit"></button>
+      </form>
+    </div>
+  
+    <div class="form-container sign-in">
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <h1>Iniciar Sesión</h1>
+        <!-- <div class="social-icons">
+          <a href="#" class="icon"><i class="pi pi-google"></i></a>
+          <a href="#" class="icon"><i class="pi pi-facebook"></i></a>
+          <a href="#" class="icon"><i class="pi pi-github"></i></a>
+          <a href="#" class="icon"><i class="pi pi-linkedin"></i></a>
+        </div> -->
+        <span>o usa tu usuario y contraseña</span>
+        <p-floatlabel variant="in">
+            <input pInputText formControlName="user"  autocomplete="off" />
+            <label for="on_label">Usuario</label>
+        </p-floatlabel>
+        <p-floatlabel variant="in">
+            <input type="password" pInputText formControlName="password"  autocomplete="off" />
+            <label for="on_label">Contraseña</label>
+        </p-floatlabel>
+        <a href="#">Perdiste tu contraseña?</a>
+        <button pButton label="Iniciar Sesión" type="submit"></button>
+      </form>
+    </div>
+  
+    <div class="toggle-container">
+      <div class="toggle">
+        <div class="toggle-panel toggle-left">
+          <h1>Bienvenido de vuelta!</h1>
+          <p>Ingresa tus datos de inicio de sesion para utilizar todas nuestras funcionalidades</p>
+          <button class="hidden" (click)="toggleMode(false)">Iniciar Sesión</button>
+        </div>
+        <div class="toggle-panel toggle-right">
+          <h1>Hola, Amigo!</h1>
+          <p>Registrate con tus datos personales para usar nuestra plataforma</p>
+          <button class="hidden" (click)="toggleMode(true)">Registrarse</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
